@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block app_content %}
+    <a href="{{ url_for('home') }}">Home</a>
+    <div>
+        {% if new == "dungeon" %}
+            <h2>Yesterday's trip to the baron was clearly a success. Now you are in a dusty, incomprehensible room and your health after a stormy night leaves much to be desired. A breath of fresh air is the best solution. It's time to make our way to the balcony.</h2>
+        {% endif %}
+        <p>You now in {{ new }}</p>
+        {% if canmove == 0 %}
+            <h4>You cant move anymore</h4>
+        {% endif %}
+        {% if new == "balcony" %}
+            <h1><b>Congratulations! You won!</b></h1>
+        {% endif %}
+        <form action="" class="form-control" method="post">
+            {{ form.csrf_token() }}
+            {% for field in form if field.name != "csrf_token" and field.name != "submit" %} 
+                <div class="form-group">
+                    {{ field.label() }}
+                    {{ field }}
+                    {% for error in field.errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            {{ form.submit }}
+        </form>
+    </div>
+    <img src="https://ucarecdn.com/1e8d0bed-5073-4202-885f-a9b1a36425c1/" alt="alternative-text">
+{% endblock %}

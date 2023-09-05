@@ -1,0 +1,19 @@
+.btn btn-primary{
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 40px;
+}
+.story-zone{
+    background-color: lightgreen;
+     width: 100%;
+      height: 80px;
+}
+
+.form-group{
+    margin-bottom: 15px;
+}
+.center-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }

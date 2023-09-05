@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{%block app_content %}
+    <div class = "back" style="background-color: lightgray; height: 100px; width: auto; padding-top: 50px; padding-bottom: 30px;" >
+        <h1>Ready to embark on an adventure full of danger?</h1>
+        <a class="btn btn-primary" style="display: block;" href="{{ url_for('ingame') }}">Accept challenge</a>
+    </div>
+    
+{% endblock %}
